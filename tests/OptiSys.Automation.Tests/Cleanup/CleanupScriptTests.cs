@@ -1,0 +1,40 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using OptiSys.Core.Cleanup;
+
+namespace OptiSys.Automation.Tests.Cleanup;
+
+public sealed class CleanupScriptTests
+{
+    [Fact]
+    public async Task PreviewWithoutDownloads_ReturnsTempEntry()
+    {
+        Assert.True(OperatingSystem.IsWindows(), "Cleanup preview script requires Windows.");
+
+        var service = new CleanupService();
+
+        var report = await service.PreviewAsync(includeDownloads: false, includeBrowserHistory: true, previewCount: 5);
+
+        Assert.NotNull(report);
+        Assert.NotEmpty(report.Targets);
+        Assert.Contains(report.Targets, target =>
+            target.Classification.Equals("Temp", StringComparison.OrdinalIgnoreCase) &&
+            target.Category.Contains("User Temp", StringComparison.OrdinalIgnoreCase));
+    }
+
+    [Fact]
+    public async Task PreviewWithDownloads_AddsDownloadsCategory()
+    {
+        Assert.True(OperatingSystem.IsWindows(), "Cleanup preview script requires Windows.");
+
+        var service = new CleanupService();
+
+        var report = await service.PreviewAsync(includeDownloads: true, includeBrowserHistory: true, previewCount: 1);
+
+        Assert.NotNull(report);
+        Assert.NotEmpty(report.Targets);
+        Assert.Contains(report.Targets, target => target.Classification.Equals("Downloads", StringComparison.OrdinalIgnoreCase));
+    }
+}
