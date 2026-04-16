@@ -1169,7 +1169,5 @@
                 </StackPanel>
             </Border>
         </Grid>
-
-        <ux:UnderDevelopmentOverlay Panel.ZIndex="999" />
     </Grid>
 </Page>
