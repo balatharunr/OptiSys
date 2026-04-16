@@ -5,7 +5,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:strings="clr-namespace:OptiSys.App.Resources.Strings"
     xmlns:converters="clr-namespace:OptiSys.App.Converters"
-    xmlns:ux="clr-namespace:OptiSys.App.Controls"
     mc:Ignorable="d"
     Title="{x:Static strings:RegistryOptimizerStrings.PageTitle}"
     Background="Transparent"
@@ -879,7 +878,5 @@
                 </Grid>
             </Border>
         </Grid>
-
-        <ux:UnderDevelopmentOverlay Grid.RowSpan="2" Panel.ZIndex="999" />
     </Grid>
 </Page>

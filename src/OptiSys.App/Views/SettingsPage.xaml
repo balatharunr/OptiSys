@@ -4,7 +4,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:controls="clr-namespace:OptiSys.App.Views"
-    xmlns:ux="clr-namespace:OptiSys.App.Controls"
       mc:Ignorable="d"
       Background="Transparent"
       Title="Settings"
@@ -509,7 +508,5 @@
                 </Grid>
             </Border>
         </Grid>
-
-        <ux:UnderDevelopmentOverlay Panel.ZIndex="999" />
     </Grid>
 </Page>

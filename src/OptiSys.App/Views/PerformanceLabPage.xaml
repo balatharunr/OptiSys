@@ -4,7 +4,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:controls="clr-namespace:OptiSys.App.Views"
-    xmlns:ux="clr-namespace:OptiSys.App.Controls"
       mc:Ignorable="d"
       Title="Performance Lab"
       Background="Transparent"
@@ -1458,7 +1457,5 @@
                 </StackPanel>
             </Border>
         </Grid>
-
-        <ux:UnderDevelopmentOverlay Panel.ZIndex="999" />
     </Grid>
 </Page>
