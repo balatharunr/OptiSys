@@ -1,0 +1,16 @@
+bin/
+obj/
+.vs/
+data/cache/registry/
+*.user
+*.suo
+*.userprefs
+*.DS_Store
+Thumbs.db
+makeitperfect.txt
+.fake
+.venv
+.vscode
+
+# Ignore Windows ETW/perf trace captures that can land in repo root
+*.etl
