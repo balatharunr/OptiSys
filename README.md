@@ -1,6 +1,6 @@
-# Optisys
+# OptiSys
 
-Windows maintenance companion for builders who prioritize safety, repeatability, and observability. Optisys coordinates PowerShell 7 automations through managed .NET services so every action is guarded, logged, and reversible and heavily secure.
+Windows maintenance companion for builders who prioritize safety, repeatability, and observability. OptiSys coordinates PowerShell 7 automations through managed .NET services so every action is guarded, logged, and reversible and heavily secure.
 
 ## At a Glance
 
@@ -31,10 +31,10 @@ Windows maintenance companion for builders who prioritize safety, repeatability,
 
 ## Architecture Overview
 
-- Frontend: WPF (.NET 8) views with CommunityToolkit.Mvvm view models ([src/Optisys.App](src/Optisys.App)).
-- Services: C# services for cleanup, registry state, automation scheduling, PowerShell invocation, and tray presence ([src/Optisys.Core](src/Optisys.Core), [src/Optisys.App/Services](src/Optisys.App/Services)).
+- Frontend: WPF (.NET 8) views with CommunityToolkit.Mvvm view models ([src/OptiSys.App](src/OptiSys.App)).
+- Services: C# services for cleanup, registry state, automation scheduling, PowerShell invocation, and tray presence ([src/OptiSys.Core](src/OptiSys.Core), [src/OptiSys.App/Services](src/OptiSys.App/Services)).
 - Automation: PowerShell 7 scripts in [automation/](automation) for essentials, cleanup, registry, and diagnostics; YAML/JSON catalogs describe tweaks, presets, processes, and bundles.
-- Packaging: Inno Setup installer ([installer/OptisysInstaller.iss](installer/OptisysInstaller.iss)) plus self-contained release artifacts in GitHub Releases.
+- Packaging: Inno Setup installer ([installer/OptiSysInstaller.iss](installer/OptiSysInstaller.iss)) plus self-contained release artifacts in GitHub Releases.
 
 ## Install and Run
 
@@ -42,20 +42,20 @@ Prerequisites: Windows 10 or later, .NET SDK 8.0+, PowerShell 7 on PATH.
 
 ```powershell
 git clone https://github.com/balatharunr/OptiSys.git
-cd Optisys
+cd OptiSys
 
-dotnet restore src/Optisys.sln
-dotnet build src/Optisys.sln -c Debug
+dotnet restore src/OptiSys.sln
+dotnet build src/OptiSys.sln -c Debug
 
-dotnet run --project src/Optisys.App/Optisys.App.csproj
+dotnet run --project src/OptiSys.App/OptiSys.App.csproj
 ```
 
 ## Test Suite
 
 ```powershell
-dotnet test tests/Optisys.Core.Tests/Optisys.Core.Tests.csproj
-dotnet test tests/Optisys.Automation.Tests/Optisys.Automation.Tests.csproj
-dotnet test tests/Optisys.App.Tests/Optisys.App.Tests.csproj
+dotnet test tests/OptiSys.Core.Tests/OptiSys.Core.Tests.csproj
+dotnet test tests/OptiSys.Automation.Tests/OptiSys.Automation.Tests.csproj
+dotnet test tests/OptiSys.App.Tests/OptiSys.App.Tests.csproj
 ```
 
 - Tools in [tools/](tools) validate catalog consistency ([tools/check_duplicate_packages.py](tools/check_duplicate_packages.py), [tools/suggest_catalog_fixes.py](tools/suggest_catalog_fixes.py)) and PowerShell flows ([tools/test-process-catalog-parser.ps1](tools/test-process-catalog-parser.ps1)).
